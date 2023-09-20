@@ -1,0 +1,29 @@
+body {
+  font-family: Poppins, Helvetica, sans-serif;
+}
+.navbarFull {
+  background-color: #a19390;
+  position: relative;
+}
+.lowercase {
+  text-transform: none;
+  color: white;
+}
+.cart {
+  font-size: 16px;
+}
+.cart > i {
+  color: white;
+}
+/* custom-dropdown.css */
+.dropdown-menu {
+  background-color: black;
+}
+
+.dropdown-menu .dropdown-item {
+  color: white;
+}
+.yellow-badge .ant-scroll-number {
+  background-color: #e79737;
+  color: white;
+}

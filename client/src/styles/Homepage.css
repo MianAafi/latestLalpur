@@ -1,0 +1,133 @@
+.banner-img {
+  margin-top: 60px;
+}
+
+.home-page h1 {
+  color: gray;
+  font-family: "Playfair Display", serif;
+}
+
+.home-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+.home-page .card {
+  background-color: rgba(128, 128, 128, 0.097);
+  width: 18rem;
+}
+.home-page .card-name-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.home-page .card-price {
+  color: black;
+  font-weight: bold;
+}
+.home-page button {
+  border-radius: 0;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.cart-btn {
+  background-color: transparent;
+  border: none;
+  color: black;
+  outline: none;
+  border: 2px solid rgb(0, 0, 0);
+}
+.cart-btn:hover {
+  background-color: gray;
+  color: white;
+  border: 2px solid transparent;
+}
+.buy-btn {
+  background-color: transparent;
+  border: 2px solid rgb(0, 0, 0);
+  outline: none;
+  color: black;
+}
+.buy-btn:hover {
+  background-color: #e79737;
+  color: white;
+  border: 2px solid transparent;
+}
+#Product-item {
+  border: none;
+}
+.Filters-div {
+  background-color: #a19390;
+}
+
+.card-transparent {
+  background-color: none;
+  /* opacity: 0.2; */
+}
+.home-page .card-text {
+  color: rgb(90, 89, 89);
+}
+
+.home-page .card img:hover {
+  transform: scale(0.9);
+}
+
+.home-page .card-img-top {
+  height: 300px !important;
+  transition: 0.2s ease-in-out;
+}
+/* ==================
+filters
+============== */
+.filters h4 {
+  margin-top: 100px;
+  color: white !important;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+}
+.catagori-span {
+  color: white;
+  /* text-decoration: none; */
+  font-size: 1rem;
+}
+.catagori-span:hover {
+  color: #e79737;
+}
+.Reset-btn {
+  color: white;
+  background-color: #e79737;
+}
+.ant-checkbox-wrapper:first-of-type {
+  margin-left: 8px;
+}
+
+.ant-checkbox-wrapper {
+  margin: 2px;
+}
+.ant-radio-wrapper {
+  margin-bottom: 5px !important;
+  margin-left: 10px;
+}
+
+.filters button {
+  background-color: white;
+  width: 100%;
+  border: none;
+  color: black;
+  /* border-radius: 5rem; */
+  border-radius: 0;
+  margin-top: 20px;
+  transition: 0.3s ease-in-out;
+}
+.filters button:hover {
+  background-color: #e79737;
+  border-radius: 15px;
+}
+
+.loadmore {
+  color: green;
+  font-weight: bold;
+  font-size: 20px !important;
+}
