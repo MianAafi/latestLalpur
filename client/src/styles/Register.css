@@ -1,0 +1,88 @@
+body {
+  font-family: Poppins, Helvetica, sans-serif;
+}
+.Registeration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.register-logo {
+  margin-top: 13px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: static;
+}
+
+.register-form {
+  position: static; /* Change to static to make it part of the normal flow */
+}
+
+.register-logo > h6 {
+  color: #e79737;
+  margin-bottom: 5px;
+}
+.register-logo > img {
+  width: 120px;
+}
+/* .Registeration {
+    background-image: url('/public/images/Registerbg.png');
+  } */
+.Registeration::before {
+  content: '';
+  background-image: url('/public/images/Registerbg.png');
+  background-size: contain; /* You can also use 'cover' if you want it to cover the entire element */
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.register-btn {
+  display: flex;
+  justify-content: center;
+}
+.alreadyaccount {
+  font-size: 10px;
+}
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: white;
+}
+.form-control {
+  background-color: #a19390;
+  border: none;
+  color: white;
+  font-size: 12px;
+}
+.form-control::placeholder {
+  color: white;
+}
+.form-control:focus {
+  background-color: #a19390;
+  color: white;
+}
+
+.register-btn > button {
+  width: 80px;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 12px;
+  background: linear-gradient(to right, #dbd6d5, #a19390, #dbd6d5);
+}
+
+.forgot-btn {
+  background-color: #434343a4 !important;
+  border: 0 !important;
+}
