@@ -42,14 +42,14 @@ const Register = () => {
   return (
     <>
       <Header />
-      <div className="Registeration">
-        <form onSubmit={handleSubmit}>
+      <div className="Registerationbg">
+        <form className="Registeration" onSubmit={handleSubmit}>
           <div className="register-logo">
             <h6>WELCOME TO</h6>
             <img src="./images/Logo.png" alt="logo" />
           </div>
           <div className="register-form">
-            <h6 className="title">REGISTER FORM</h6>
+            <h6 className="title">Register Form</h6>
             <div className="mb-3">
               <input
                 type="text"
@@ -121,7 +121,9 @@ const Register = () => {
               <button type="submit">REGISTER</button>
             </div>
             <p className="alreadyaccount">Already have an Account?</p>
-            <Link to="/login">Login</Link>
+            <Link className="loginit" to="/login">
+              Login
+            </Link>
           </div>
         </form>
       </div>

@@ -1,17 +1,25 @@
 body {
   font-family: Poppins, Helvetica, sans-serif;
 }
+/* .Registerationbg {
+  background-image: url('/public/images/pagebg.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+} */
+
 .Registeration {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 1;
 }
 
 .register-logo {
-  margin-top: 13px;
-  width: 100%;
+  margin-top: 5px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,23 +27,23 @@ body {
 }
 
 .register-form {
-  position: static; /* Change to static to make it part of the normal flow */
+  position: static;
 }
 
 .register-logo > h6 {
   color: #e79737;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
+  font-size: 22px;
+  text-align: center;
 }
 .register-logo > img {
-  width: 120px;
+  width: 100px;
+  margin-bottom: 10px;
 }
-/* .Registeration {
-    background-image: url('/public/images/Registerbg.png');
-  } */
 .Registeration::before {
   content: '';
   background-image: url('/public/images/Registerbg.png');
-  background-size: contain; /* You can also use 'cover' if you want it to cover the entire element */
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
@@ -50,12 +58,13 @@ body {
   justify-content: center;
 }
 .alreadyaccount {
-  font-size: 10px;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
 }
 .title {
   text-align: center;
   margin-bottom: 10px;
-  font-weight: bold;
   margin-top: 10px;
   color: white;
 }
@@ -64,6 +73,7 @@ body {
   border: none;
   color: white;
   font-size: 12px;
+  width: 250px;
 }
 .form-control::placeholder {
   color: white;
@@ -74,15 +84,23 @@ body {
 }
 
 .register-btn > button {
-  width: 80px;
   color: #fff;
   border: none;
   border-radius: 20px;
   font-size: 12px;
-  background: linear-gradient(to right, #dbd6d5, #a19390, #dbd6d5);
+  padding: 3px 15px;
+  background: linear-gradient(to right, #beb7b6, #968c89, #beb7b6);
 }
 
 .forgot-btn {
   background-color: #434343a4 !important;
   border: 0 !important;
+}
+.loginit {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }

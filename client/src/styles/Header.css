@@ -2,9 +2,29 @@ body {
   font-family: Poppins, Helvetica, sans-serif;
 }
 .navbarFull {
-  background-color: #a19390;
+  position: relative;
+  background-image: url('/public/images/NavBar.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* .navbarFull {
   position: relative;
 }
+.navbarFull::before {
+  content: '';
+  background-image: url('/public/images/NavBar.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  z-index: -1;
+} */
 .lowercase {
   text-transform: none;
   color: white;
