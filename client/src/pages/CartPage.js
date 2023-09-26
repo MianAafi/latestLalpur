@@ -10,6 +10,7 @@ import { AiFillWarning } from 'react-icons/ai';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import '../styles/CartStyles.css';
+import Header from '../components/Layout/Header';
 
 const CartPage = () => {
   const [auth, setAuth] = useAuth();
@@ -80,31 +81,58 @@ const CartPage = () => {
     }
   };
   return (
-    <Layout title={'Ecommrce - Cart Page'}>
-      <div className="container-fluid" style={{ marginTop: '72px' }}>
-        <div className=" cart-page">
+    // <Layout title={'Ecommrce - Cart Page'} className="m-0">
+    <>
+      <Header />
+      <div
+        className="container-fluid m-0 p-0"
+        style={{
+          backgroundColor: '#d3d3d3',
+        }}
+      >
+        <div className=" cart-page m-0">
           <div className="row">
-            <div className="col-lg-12">
-              <h1 className="text-center bg-light p-2 mb-1">
+            <div className="col-lg-12 p-0">
+              <div className="bg-nav-cart ">
+                {/* <h1 className="text-center bg-light p-2 mb-1">
                 {!auth?.user
                   ? 'Hello Guest'
-                  : `Hello  ${auth?.token && auth?.user?.name}`}
-                <p className="text-center">
+                  : `Hello  ${auth?.token && auth?.user?.name}`} */}
+                <p className="navBar-cart m-0">
+                  Dear valued customer, Thank you for your recent visit to{' '}
+                  <span style={{ color: '#E79739' }}>Lyallpur Collection</span>
+                  <br />
                   {cart?.length
-                    ? `You Have ${cart.length} items in your cart ${
+                    ? ` This is a reminder ${
+                        cart.length
+                      } items are holding in your Cart. ${
                         auth?.token ? '' : 'please login to checkout !'
                       }`
                     : ' Your Cart Is Empty'}
                 </p>
-              </h1>
+                {/* </h1> */}
+              </div>
             </div>
           </div>
         </div>
-        <div className="container ">
-          <div className="row ">
+        <div
+          className="container "
+          style={{
+            backgroundColor: '#d3d3d3',
+          }}
+        >
+          <div className="row">
             <div className="col-md-7  p-0 m-0">
               {cart?.map((p) => (
-                <div className="row card flex-row" key={p._id}>
+                <div
+                  className="row card flex-row"
+                  style={{
+                    backgroundColor: '#d3d3d3',
+                    padding: '10px 0',
+                    border: 'none',
+                  }}
+                  key={p._id}
+                >
                   <div className="col-md-4">
                     <img
                       src={`/api/v1/product/product-photo/${p._id}`}
@@ -115,8 +143,8 @@ const CartPage = () => {
                     />
                   </div>
                   <div className="col-md-4">
-                    <p>{p.name}</p>
-                    <p>{p.description.substring(0, 30)}</p>
+                    <p className="p-1">{p.name.substring(0, 30)}</p>
+                    {/* <p>{p.description.substring(0, 30)}</p> */}
                     <p>Price : {p.price}</p>
                   </div>
                   <div className="col-md-4 cart-remove-btn">
@@ -124,17 +152,26 @@ const CartPage = () => {
                       className="btn btn-danger"
                       onClick={() => removeCartItem(p._id)}
                     >
-                      Remove
+                      Delete
+                      <i
+                        class="fa-solid fa-circle-xmark"
+                        style={{
+                          color: '#ffffff',
+                          paddingLeft: '5px',
+                        }}
+                      ></i>
                     </button>
                   </div>
                 </div>
               ))}
             </div>
             <div className="col-md-5 cart-summary ">
-              <h2>Cart Summary</h2>
+              <h2 style={{ color: '#E79739' }}>Cart Summary</h2>
               <p>Total | Checkout | Payment</p>
               <hr />
-              <h4>Total : {totalPrice()} </h4>
+              <h4>
+                Total : <span style={{ color: '#E79739' }}>{totalPrice()}</span>
+              </h4>
               {auth?.user?.address ? (
                 <>
                   <div className="mb-3">
@@ -200,7 +237,8 @@ const CartPage = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
+    // </Layout>
   );
 };
 
