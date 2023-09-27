@@ -1,5 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import '../../styles/AdminDashboard.css';
 const AdminMenu = () => {
   return (
     <>
@@ -8,25 +9,29 @@ const AdminMenu = () => {
           <h4>Admin Panel</h4>
           <NavLink
             to="/dashboard/admin/create-category"
-            className="list-group-item list-group-item-action"
+            className="list-group-item list-group-item-action "
+            id="admin-Panel"
           >
             Create Category
           </NavLink>
           <NavLink
             to="/dashboard/admin/create-product"
-            className="list-group-item list-group-item-action"
+            className="list-group-item list-group-item-action "
+            id="admin-Panel"
           >
             Create Product
           </NavLink>
           <NavLink
             to="/dashboard/admin/products"
-            className="list-group-item list-group-item-action"
+            className="list-group-item list-group-item-action "
+            id="admin-Panel"
           >
             Products
           </NavLink>
           <NavLink
             to="/dashboard/admin/orders"
-            className="list-group-item list-group-item-action"
+            className="list-group-item list-group-item-action "
+            id="admin-Panel"
           >
             Orders
           </NavLink>

@@ -1,0 +1,24 @@
+.admin_details {
+  padding: 10px 20px;
+  background-color: #d3d3d3;
+  width: 500px;
+  font-size: 22px;
+  border: 5px solid #a19390;
+  border-radius: 10px;
+}
+.dashboard-menu {
+  margin-top: -80px;
+  padding-top: 150px;
+  background-color: #a19390;
+  padding-bottom: 100px;
+}
+#admin-Panel {
+  width: 200px;
+  margin-left: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: normal;
+  border: none;
+  background-color: #beadad;
+}
