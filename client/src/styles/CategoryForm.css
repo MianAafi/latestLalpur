@@ -1,0 +1,19 @@
+/* Your CSS file or style block */
+.input-new_cat-Add {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.form-control::placeholder {
+  color: black;
+}
+.SubmitBtn-catgory {
+  background-color: black;
+  color: white;
+}
+
+.SubmitBtn-catgory:hover {
+  background-color: rgb(68, 68, 68);
+  color: white;
+}

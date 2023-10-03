@@ -8,15 +8,12 @@ const AdminDashboard = () => {
   return (
     <Layout>
       <div className="container-fluid dashboard p-0 m-0">
-        <div className="row">
+        <div className="row p-0 m-0">
           <div className="col-md-3 " style={{ backgroundColor: '#19390' }}>
             <AdminMenu />
           </div>
-          <div className="col-md-9 p-0">
-            <div
-              className="card w-75 p-3 "
-              style={{ backgroundColor: 'transparent', border: 'none' }}
-            >
+          <div className="col-8 p-0">
+            <div style={{ backgroundColor: 'transparent', border: 'none' }}>
               <h1>Admin</h1>
               <h3 className="admin_details">
                 {' '}

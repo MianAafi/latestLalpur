@@ -13,12 +13,15 @@
   padding-bottom: 100px;
 }
 #admin-Panel {
-  width: 200px;
-  margin-left: 50px;
+  width: 80%;
+  margin-left: 10%;
   margin-top: 10px;
   border-radius: 5px;
   color: #fff;
   font-weight: normal;
   border: none;
   background-color: #beadad;
+}
+#admin-Panel.active {
+  background-color: #e79737;
 }

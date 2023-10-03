@@ -1,0 +1,20 @@
+.categoryForm > form-control {
+  background-color: black;
+}
+.editBtn {
+  background-color: #e79737;
+  color: white;
+}
+
+.editBtn:hover {
+  background-color: #f38f15;
+  color: white;
+}
+.actionBar {
+  background-color: #a19390;
+  color: white;
+}
+.edit_delete-btn {
+  display: flex;
+  justify-content: end;
+}
