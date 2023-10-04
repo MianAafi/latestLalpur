@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import AdminMenu from "../../components/Layout/AdminMenu";
-import Layout from "./../../components/Layout/Layout";
-import axios from "axios";
-import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
-import '../../styles/ProductList.css'
+import React, { useState, useEffect } from 'react';
+import AdminMenu from '../../components/Layout/AdminMenu';
+import Layout from './../../components/Layout/Layout';
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+import '../../styles/Products.css';
+import '../../styles/ProductList.css';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -12,11 +13,11 @@ const Products = () => {
   //getall products
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/get-product");
+      const { data } = await axios.get('/api/v1/product/get-product');
       setProducts(data.products);
     } catch (error) {
       console.log(error);
-      toast.error("Someething Went Wrong");
+      toast.error('Someething Went Wrong');
     }
   };
 
@@ -26,11 +27,12 @@ const Products = () => {
   }, []);
   return (
     <Layout>
-
       <div className="row dashboard">
         <div>
-          <Link to={"/dashboard/admin/create-product"}>
-            <button className="btn" type="button" style={{ width: "150px", background: "#ffc107", color: "var(--bs-gray-900);", border: "5%", borderRadius: "2px solid blue", marginBottom: "10px", float: "right" }}>Create Product</button>
+          <Link to={'/dashboard/admin/create-product'}>
+            <button className="create-productBtn btn" type="button">
+              Create Product
+            </button>
           </Link>
         </div>
         <div className="col-md-3">
@@ -45,13 +47,21 @@ const Products = () => {
                 to={`/dashboard/admin/product/${p.slug}`}
                 className="product-link"
               >
-                <div className="card m-2" style={{ width: "18rem" }}>
+                <div
+                  className="card m-2"
+                  style={{
+                    width: '18rem',
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                  }}
+                >
                   <img
                     src={`/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
+                    style={{ height: '15rem', borderRadius: '10px' }}
                     alt={p.name}
                   />
-                  <div className="card-body">
+                  <div className="card-body" style={{ height: '7rem' }}>
                     <h5 className="card-title">{p.name}</h5>
                     <p className="card-text">{p.description}</p>
                   </div>

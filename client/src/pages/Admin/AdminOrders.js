@@ -6,6 +6,7 @@ import AdminMenu from '../../components/Layout/AdminMenu';
 import Layout from '../../components/Layout/Layout';
 import { useAuth } from '../../context/auth';
 import moment from 'moment';
+import '../../styles/AdminOrders.css';
 import { Select } from 'antd';
 const { Option } = Select;
 
@@ -93,7 +94,14 @@ const AdminOrders = () => {
                   </table>
                   <div className="container">
                     {o?.products?.map((p, i) => (
-                      <div className="row mb-2 p-3 card flex-row" key={p._id}>
+                      <div
+                        className="row mb-2 p-3 card flex-row"
+                        style={{
+                          backgroundColor: 'transparent',
+                          border: 'none',
+                        }}
+                        key={p._id}
+                      >
                         <div className="col-md-4">
                           <img
                             src={`/api/v1/product/product-photo/${p._id}`}
@@ -101,6 +109,7 @@ const AdminOrders = () => {
                             alt={p.name}
                             width="100px"
                             height="100px"
+                            style={{ borderRadius: '5px' }}
                           />
                         </div>
                         <div className="col-md-8">

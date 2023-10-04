@@ -1,0 +1,21 @@
+.inputCreateProduct {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: white;
+  border: 1px solid #e79737;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.select-categoryP {
+  border: 1px solid #e79737;
+}
+.btn-upload {
+  width: 100%;
+  background-color: #0f0f0f;
+  color: white;
+}
+.btn-upload:hover {
+  width: 100%;
+  background-color: #e79737;
+  color: white;
+}

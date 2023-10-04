@@ -1,0 +1,16 @@
+.create-productBtn {
+  width: 150px;
+  background: #e79737;
+  color: white;
+  border: 5%;
+  margin-bottom: 10px;
+  float: right;
+}
+.create-productBtn:hover {
+  background: #0f0f0f;
+  color: white;
+}
+.create-productBtn.clicked {
+  background: #0f0f0f;
+  color: white;
+}
