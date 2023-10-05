@@ -1,0 +1,24 @@
+.UserProfileForm {
+  background-color: #a19390;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 70px;
+}
+.form-control {
+  background-color: #beadad;
+  color: white;
+}
+.form-control::placeholder {
+  color: white;
+}
+#exampleInputEmail1 {
+  background-color: #beadad;
+  color: white;
+}
+#userProfileUpdate {
+  border-radius: 10px;
+}
+#userProfileUpdate:hover {
+  background-color: #e79737;
+  border: none;
+}

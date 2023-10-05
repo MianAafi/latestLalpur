@@ -15,6 +15,5 @@
   color: white;
 }
 .edit_delete-btn {
-  display: flex;
-  justify-content: end;
+  float: right;
 }

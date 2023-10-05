@@ -1,0 +1,14 @@
+.UserOrder.active {
+  background-color: #e79737;
+}
+#UserDashboard {
+  background-color: #beadad;
+  margin: 5px 5%;
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+#UserDashboard.active {
+  background-color: #e79737;
+}
