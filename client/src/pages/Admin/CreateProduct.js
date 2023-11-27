@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './../../components/Layout/Layout';
 import AdminMenu from './../../components/Layout/AdminMenu';
+import SellerMenu from './../../components/Layout/SellerMenu';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import { Select } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/CreateProduct.css';
+import { useAuth } from '../../context/auth';
 const { Option } = Select;
 
 const CreateProduct = () => {
@@ -19,6 +21,7 @@ const CreateProduct = () => {
   const [quantity, setQuantity] = useState('');
   const [shipping, setShipping] = useState('');
   const [photo, setPhoto] = useState('');
+  const [auth, setAuth] = useAuth();
 
   //get all category
   const getAllCategory = async () => {
@@ -69,7 +72,8 @@ const CreateProduct = () => {
       <div className="container-fluid dashboard">
         <div className="row">
           <div className="col-md-3">
-            <AdminMenu />
+            { auth.user.role === 1 ? (<AdminMenu />) : (<SellerMenu/>) }
+            
           </div>
           <div className="col-md-9">
             <h1>Create Product</h1>

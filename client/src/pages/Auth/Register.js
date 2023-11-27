@@ -13,10 +13,14 @@ const Register = () => {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [answer, setAnswer] = useState('');
+  const [role, setRole] = useState(0);
   const navigate = useNavigate();
 
   // form function
   const handleSubmit = async (e) => {
+    
+    console.log(name,password,role)
+    // console.log(role)
     e.preventDefault();
     try {
       const res = await axios.post('/api/v1/auth/register', {
@@ -26,6 +30,7 @@ const Register = () => {
         phone,
         address,
         answer,
+        role
       });
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
@@ -72,6 +77,13 @@ const Register = () => {
                 placeholder="Enter Your Email "
                 required
               />
+            </div>
+            <div className="mb-3">
+             <select className="form-control" onChange={(e)=> setRole(e.target.value)}>
+                <option>Select account type</option>
+                <option value={0}>Personal account</option>
+                <option value={2}>Seller account</option>
+             </select>
             </div>
             <div className="mb-3">
               <input

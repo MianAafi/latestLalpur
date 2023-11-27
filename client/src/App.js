@@ -24,6 +24,11 @@ import Categories from "./pages/Categories";
 import CategoryProduct from "./pages/CategoryProduct";
 import CartPage from "./pages/CartPage";
 import AdminOrders from "./pages/Admin/AdminOrders";
+// seller routes
+import SellerRoute from "./components/Routes/SellerRoute"
+import SelllerDashboard from './pages/seller/SellerDashboard'
+import SellerProducts from './pages/seller/SellerProducts'
+import SellerOrders from './pages/seller/SellerOrder'
 // import { Sidebar } from "react-pro-sidebar";
 function App() {
   return (
@@ -49,6 +54,13 @@ function App() {
             <Route path="admin/products" element={<Products />} />
             <Route path="admin/users" element={<Users />} />
             <Route path="admin/orders" element={<AdminOrders />} />
+          </Route>
+          <Route path="/dashboard" element={<SellerRoute />}>
+            <Route path="seller" element={<SelllerDashboard />} />
+            <Route path="seller/create-product" element={<CreateProduct />} />
+            <Route path="seller/product/:slug" element={<UpdateProduct />} />
+            <Route path="seller/products" element={<SellerProducts />} />
+            <Route path="seller/orders" element={<SellerOrders />} />
           </Route>
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPasssword />} />
