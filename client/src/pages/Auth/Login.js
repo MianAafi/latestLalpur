@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Layout from './../../components/Layout/Layout';
 import axios from 'axios';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import '../../styles/AuthStyles.css';
+import '../../styles/Login.css';
 import { useAuth } from '../../context/auth';
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -40,11 +41,22 @@ const Login = () => {
   };
   return (
     <Layout title="Register - Ecommer App">
-      <div className="form-container " style={{ minHeight: '90vh' }}>
-        <form onSubmit={handleSubmit} style={{ width: '50%' }}>
-          <h4 className="title">LOGIN FORM</h4>
+      <div className="Login-main-container " id="loginUserForm">
+        <div className="textlogin">
+          <img src="/images/Logo.png" className="logoImg" alt="logo"></img>
+          <br />
+          <br /> <br />
+          <h1 className="headingLogin">WELLCOME BACK</h1>
+          <p className="loginP">
+            Enter your login details to access <br></br> your account
+          </p>
+        </div>
+        <form onSubmit={handleSubmit} className="LoginFormSize">
+          <div className="Login-heading-div">
+            <h1 className="user-login">User Login</h1>
+          </div>
 
-          <div className="mb-3">
+          <div className="entrEmail">
             <input
               type="email"
               autoFocus
@@ -56,7 +68,7 @@ const Login = () => {
               required
             />
           </div>
-          <div className="mb-3">
+          <div>
             <input
               type="password"
               value={password}
@@ -67,49 +79,21 @@ const Login = () => {
               required
             />
           </div>
-          <div className="mb-3">
-            <button
-              type="button"
-              className="btn forgot-btn"
-              onClick={() => {
-                navigate('/forgot-password');
-              }}
-            >
-              Forgot Password
+          <div>
+            <button id="login-btn" type="submit">
+              LOGIN
             </button>
           </div>
-          <button type="submit" className="btn btn-primary">
-            LOGIN
-          </button>
+          <div className=" text-center">
+            <Link to="/forgot-password" className="forgot-link">
+              Forgot your Password?
+            </Link>
+            <p className="noAccount">Don't you have Account?</p>
+            <Link className="registerNow-btn" to="/Register">
+              Register now
+            </Link>
+          </div>
         </form>
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <div className="Login-main-container">
-          <div className="logo-image-div">
-            <img src="./images/Logo.png" alt="Logo-Im" className="Logo-Image" />
-          </div>
-          <div className="Welcome-div">
-            {/* <img src="" alt="" /> */}
-            <h1 className="Welcome-heading">Welcome Back</h1>
-            <h4 className="Welcome-para">
-              {' '}
-              Enter your login details to access <br />
-              your account
-            </h4>
-          </div>
-          <div className="Login-heading-div">
-            <h1 className="user-login">User Login</h1>
-          </div>
-
-          <form onSubmit={handleSubmit} className="From">
-            <div className="d-flex d-inline">
-              <img src=".images/IconUser.png" alt="iicon" />
-              <input type="text" placeholder="Email" className="FormInput" />
-            </div>
-
-            <input type="text" placeholder="Password" className="FormInput" />
-          </form>
-        </div>
       </div>
     </Layout>
   );

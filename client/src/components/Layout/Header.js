@@ -1,12 +1,12 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import { useAuth } from "../../context/auth";
-import toast from "react-hot-toast";
-import SearchInput from "../Form/SearchInput";
-import useCategory from "../../hooks/useCategory";
-import { useCart } from "../../context/cart";
-import "../../styles/Header.css";
-import { Badge } from "antd";
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { useAuth } from '../../context/auth';
+import toast from 'react-hot-toast';
+import SearchInput from '../Form/SearchInput';
+import useCategory from '../../hooks/useCategory';
+import { useCart } from '../../context/cart';
+import '../../styles/Header.css';
+import { Badge } from 'antd';
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -16,17 +16,17 @@ const Header = () => {
     setAuth({
       ...auth,
       user: null,
-      token: ""
+      token: '',
     });
-    localStorage.removeItem("auth");
-    toast.success("Logout Successfully");
+    localStorage.removeItem('auth');
+    toast.success('Logout Successfully');
   };
   return (
     <>
       <div className="header-top"></div>
       <nav
         className="navbar navbar-expand-lg fixed-top navbarFull "
-        style={{ boxShadow: "none", border: "none" }}
+        style={{ boxShadow: 'none', border: 'none' }}
       >
         <div className="container p-0 ">
           <button
@@ -43,7 +43,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <Link to="/" className="navbar-brand">
               <img
-                style={{ height: "70px", margin: "10px 0" }}
+                style={{ height: '70px', margin: '10px 0' }}
                 src="/images/logo.png"
                 alt="Logo"
               ></img>
@@ -54,7 +54,7 @@ const Header = () => {
                 <NavLink
                   to="/"
                   className="nav-link lowercase"
-                  style={{ color: "white" }}
+                  style={{ color: 'white' }}
                 >
                   Home
                 </NavLink>
@@ -62,20 +62,18 @@ const Header = () => {
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle lowercase white-text "
-                  style={{ color: "white" }}
-                  to={"/categories"}
+                  style={{ color: 'white' }}
+                  to={'/categories'}
                   data-bs-toggle="dropdown"
                 >
                   Categories
                 </Link>
-                <ul
-                  className="dropdown-menu"
-                  style={{ backgroundColor: "black" }}
-                >
+                <ul className="dropdown-menu" id="allCategoryNav">
                   <li>
                     <Link
                       className="dropdown-item lowercase"
-                      to={"/categories"}
+                      id="allCategoryNavItems"
+                      to={'/categories'}
                     >
                       All Categories
                     </Link>
@@ -84,6 +82,7 @@ const Header = () => {
                     <li key={c.slug}>
                       <Link
                         className="dropdown-item lowercase"
+                        id="allCategoryNavItems"
                         to={`/category/${c.slug}`}
                       >
                         {c.name}
@@ -114,7 +113,7 @@ const Header = () => {
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
-                      style={{ border: "none" }}
+                      style={{ border: 'none' }}
                     >
                       {auth?.user?.name}
                     </NavLink>
@@ -122,7 +121,7 @@ const Header = () => {
                       <li>
                         <NavLink
                           to={`/dashboard/${
-                            auth?.user?.role === 1 ? "admin" : "user"
+                            auth?.user?.role === 1 ? 'admin' : 'user'
                           }`}
                           className="dropdown-item lowercase"
                         >

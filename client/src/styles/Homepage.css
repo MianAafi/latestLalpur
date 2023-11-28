@@ -4,7 +4,7 @@
 
 .home-page h1 {
   color: gray;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .home-page {
@@ -45,16 +45,19 @@
   color: white;
   border: 2px solid transparent;
 }
-.buy-btn {
+.detail-btn {
   background-color: transparent;
   border: 2px solid rgb(0, 0, 0);
   outline: none;
   color: black;
 }
-.buy-btn:hover {
+.detail-btn:hover {
   background-color: #e79737;
   color: white;
   border: 2px solid transparent;
+}
+.detail-btn:active {
+  background-color: #e79737;
 }
 #Product-item {
   border: none;
@@ -127,7 +130,9 @@ filters
 }
 
 .loadmore {
-  color: green;
   font-weight: bold;
   font-size: 20px !important;
+}
+.loadmore:hover {
+  color: #e79737;
 }

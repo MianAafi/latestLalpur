@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Checkbox, Radio } from "antd";
-import { Prices } from "../components/Prices";
-import { useCart } from "../context/cart";
-import axios from "axios";
-import toast from "react-hot-toast";
-import Layout from "./../components/Layout/Layout";
-import { AiOutlineReload } from "react-icons/ai";
-import { FaGripLines } from "react-icons/fa";
-import "../styles/Homepage.css";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Checkbox, Radio } from 'antd';
+import { Prices } from '../components/Prices';
+import { useCart } from '../context/cart';
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import Layout from './../components/Layout/Layout';
+import { AiOutlineReload } from 'react-icons/ai';
+import { FaGripLines } from 'react-icons/fa';
+import '../styles/Homepage.css';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const HomePage = () => {
   //get all cat
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get('/api/v1/category/get-category');
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -54,7 +54,7 @@ const HomePage = () => {
   //getTOtal COunt
   const getTotal = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/product-count");
+      const { data } = await axios.get('/api/v1/product/product-count');
       setTotal(data?.total);
     } catch (error) {
       console.log(error);
@@ -99,9 +99,9 @@ const HomePage = () => {
   //get filterd product
   const filterProduct = async () => {
     try {
-      const { data } = await axios.post("/api/v1/product/product-filters", {
+      const { data } = await axios.post('/api/v1/product/product-filters', {
         checked,
-        radio
+        radio,
       });
       setProducts(data?.products);
     } catch (error) {
@@ -109,7 +109,7 @@ const HomePage = () => {
     }
   };
   return (
-    <Layout title={"Lyallpur Collection "}>
+    <Layout title={'Lyallpur Collection '}>
       {/* banner image */}
       {/* <img
         src="/images/b.jpg"
@@ -155,7 +155,7 @@ const HomePage = () => {
             </button>
           </div>
         </div>
-        <div className="col-md-9" style={{ marginTop: "5rem" }}>
+        <div className="col-md-9" style={{ marginTop: '5rem' }}>
           <h1 className="text-center">All Products</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
@@ -172,11 +172,11 @@ const HomePage = () => {
                 <div className="card-body">
                   <div className="card-name-price">
                     <h5 className="card-title">{p.name}</h5>
-                  </div>{" "}
+                  </div>{' '}
                   <h5 className="card-title card-price">
-                    {p.price.toLocaleString("en-RS", {
-                      style: "currency",
-                      currency: "PKR"
+                    {p.price.toLocaleString('en-RS', {
+                      style: 'currency',
+                      currency: 'PKR',
                     })}
                   </h5>
                   {/* <p className="card-text ">
@@ -184,20 +184,20 @@ const HomePage = () => {
                   </p> */}
                   <div className="card-name-price">
                     <button
-                      className="buy-btn btn btn-info ms-1"
+                      className="detail-btn btn  ms-1"
                       onClick={() => navigate(`/product/${p.slug}`)}
                     >
-                      Buy Now
+                      More Details
                     </button>
                     <button
                       className="cart-btn btn btn-dark ms-1"
                       onClick={() => {
                         setCart([...cart, p]);
                         localStorage.setItem(
-                          "cart",
+                          'cart',
                           JSON.stringify([...cart, p])
                         );
-                        toast.success("Item Added to cart");
+                        toast.success('Item Added to cart');
                       }}
                     >
                       ADD TO CART
@@ -217,10 +217,10 @@ const HomePage = () => {
                 }}
               >
                 {loading ? (
-                  "Loading ..."
+                  'Loading ...'
                 ) : (
                   <>
-                    {" "}
+                    {' '}
                     Loadmore <AiOutlineReload />
                   </>
                 )}

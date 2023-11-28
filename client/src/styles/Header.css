@@ -8,6 +8,12 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 }
+#allCategoryNav {
+  background-color: #ada3a1;
+}
+#allCategoryNavItems:hover {
+  background-color: #e79737;
+}
 
 /* .navbarFull {
   position: relative;

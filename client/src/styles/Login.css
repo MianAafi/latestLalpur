@@ -1,0 +1,141 @@
+#loginUserForm {
+  background-image: url('/public/images/LoginPage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  left: 0;
+  right: 0;
+  width: 500px;
+  height: 722px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logoImg {
+  width: 200px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+.headingLogin {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+.textlogin {
+  margin: 30px 0 60px 0;
+}
+.loginP {
+  color: white;
+  text-align: center;
+  font-size: 16px;
+}
+.Login-heading-div {
+  background-color: gray;
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin: 30px 0 20px 0;
+}
+.user-login {
+  font-size: 30px;
+  padding: 20px 0;
+  margin: 0px;
+}
+.LoginFormSize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0px;
+  margin-top: 100px;
+}
+.forgot-link {
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.forgot-link:hover {
+  color: #e89937;
+}
+.entrEmail {
+  margin: 20px 0;
+}
+
+.noAccount {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.registerNow-btn {
+  color: black;
+  text-decoration: none;
+  font-size: 10px;
+}
+.registerNow-btn:hover {
+  color: #e89937;
+}
+
+#login-btn {
+  width: 100px;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 3px 15px;
+  margin-top: 20px;
+  background: linear-gradient(to right, #beb7b6, #968c89, #beb7b6);
+}
+@media (max-width: 568px) {
+  #loginUserForm {
+    width: 350px;
+    height: 505px;
+  }
+  .logoImg {
+    width: 120px;
+  }
+  .headingLogin {
+    font-size: 24px;
+  }
+  .textlogin {
+    margin: 0;
+  }
+  .loginP {
+    font-size: 12px;
+    margin-bottom: 60px;
+  }
+  .Login-heading-div {
+    background-color: gray;
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin: 0px 0 -10px 0;
+  }
+  .user-login {
+    font-size: 20px;
+    padding: 10px 0;
+    margin: 0px 0 0 0;
+  }
+  .LoginFormSize {
+    padding-bottom: 0px;
+    margin-top: 0px;
+  }
+  .entrEmail {
+    margin: 30px 0 15px 0;
+  }
+  #login-btn {
+    margin-top: 15px;
+  }
+  .forgot-link {
+    font-size: 10px;
+  }
+  .noAccount {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}

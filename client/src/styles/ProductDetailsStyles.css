@@ -1,18 +1,39 @@
 .product-details {
   margin-top: 100px !important;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .product-details-info {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
 }
 
 .product-details-info h6 {
-  margin-bottom: 20px !important;
+  margin-bottom: 20px;
 }
 
+.mainImage {
+  width: 450px;
+}
+
+.DetailAddcart {
+  background-color: #beadad;
+  color: white;
+}
+.DetailAddcart:hover {
+  background-color: #e79737;
+  color: white;
+}
+.similarText {
+  padding: 0px 0 0 20px;
+}
+.similar-products {
+  padding: 0px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 .similar-products .card {
   background-color: rgba(128, 128, 128, 0.097);
   width: 18rem;
@@ -25,7 +46,7 @@
 }
 
 .similar-products .card-price {
-  color: green;
+  color: #e79737;
   font-weight: bold;
 }
 .similar-products button {
@@ -46,5 +67,83 @@
 }
 
 .similar-products .card-img-top {
-  height: 300px !important;
+  max-height: 300px !important;
+}
+.MoreDetailsProduct:hover {
+  color: #e79737;
+}
+.simiplarproductsRow {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 992px) {
+  .mainImage {
+    width: 350px;
+  }
+  .product-details-info {
+    padding-left: 30px;
+  }
+
+  .similar-products {
+    padding: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .product-details {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainImage {
+    width: 240px;
+  }
+  .product-details-info {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+  .similar-products {
+    padding: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .product-details {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .details {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .product-details-info h6 {
+    margin-bottom: 15px;
+  }
+  .similarText {
+    padding: 0px 0 0 15px;
+  }
+  .similar-products {
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .mainImage {
+    width: 350px;
+  }
+  #productimgdiv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .product-details-info {
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  .DetailAddcart {
+    width: 200px;
+  }
 }
