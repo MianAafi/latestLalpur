@@ -25,7 +25,55 @@ export const isAdmin = async (req, res, next) => {
         message: "UnAuthorized Access",
       });
     } else {
+      req.activeuser = user;
       next();
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(401).send({
+      success: false,
+      error,
+      message: "Error in admin middelware",
+    });
+  }
+};
+
+// seller access
+
+export const isSeller = async (req, res, next) => {
+  try {
+    const user = await userModel.findById(req.user._id);
+    if (user.role !== 2) {
+      return res.status(401).send({
+        success: false,
+        message: "UnAuthorized Access",
+      });
+    } else {
+      req.activeuser = user;
+      next();
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(401).send({
+      success: false,
+      error,
+      message: "Error in admin middelware",
+    });
+  }
+};
+
+
+export const isAdminSeller = async (req, res, next) => {
+  try {
+    const user = await userModel.findById(req.user._id);
+    if (user.role === 2 || user.role === 1) {
+      req.activeuser = user;
+      next();
+    } else {
+      return res.status(401).send({
+        success: false,
+        message: "UnAuthorized Access",
+      });
     }
   } catch (error) {
     console.log(error);

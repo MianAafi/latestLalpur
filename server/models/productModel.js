@@ -31,6 +31,10 @@ const productSchema = new mongoose.Schema(
       data: Buffer,
       contentType: String,
     },
+    createdBy: {
+      type: mongoose.ObjectId,
+      ref: "users",
+    },
     shipping: {
       type: Boolean,
     },

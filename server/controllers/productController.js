@@ -6,6 +6,7 @@ import fs from "fs";
 import slugify from "slugify";
 import braintree from "braintree";
 import dotenv from "dotenv";
+import { send } from "process";
 
 dotenv.config();
 
@@ -40,7 +41,7 @@ export const createProductController = async (req, res) => {
           .send({ error: "photo is Required and should be less then 1mb" });
     }
 
-    const products = new productModel({ ...req.fields, slug: slugify(name) });
+    const products = new productModel({ ...req.fields, createdBy:req.user._id,slug: slugify(name) });
     if (photo) {
       products.photo.data = fs.readFileSync(photo.path);
       products.photo.contentType = photo.type;
@@ -61,6 +62,9 @@ export const createProductController = async (req, res) => {
   }
 };
 
+export const getSellerProduct = async (req,res)=>{
+  
+}
 //get all products
 export const getProductController = async (req, res) => {
   try {

@@ -21,6 +21,27 @@ const Header = () => {
     localStorage.removeItem('auth');
     toast.success('Logout Successfully');
   };
+  const createRoute = () => {
+    if (auth?.user?.role === 1) {
+      return (
+        <NavLink to={`/dashboard/admin`} className="dropdown-item lowercase">
+          Dashboard
+        </NavLink>
+      );
+    } else if (auth?.user?.role === 2) {
+      return (
+        <NavLink to={`/dashboard/seller`} className="dropdown-item lowercase">
+          Dashboard
+        </NavLink>
+      );
+    } else {
+      return (
+        <NavLink to={`/dashboard/user`} className="dropdown-item lowercase">
+          Dashboard
+        </NavLink>
+      );
+    }
+  };
   return (
     <>
       <div className="header-top"></div>
